@@ -2,9 +2,18 @@ import * as React from 'react';
 import './style.css';
 
 export default function App() {
+  const [darkTheme, setDarkTheme] = React.useState(true)
+
+  React.useEffect(() => {
+    console.log(darkTheme)
+  })
+  function toggleTheme() {
+    setDarkTheme(prevTheme => !prevTheme);
+    console.log(darkTheme)
+  }
   return (
     <div>
-      <h1>Hello StackBlitz!</h1>
+      <button onClick={toggleTheme}>Toogle Theme</button>
       <p>Start editing to see some magic happen :)</p>
     </div>
   );
